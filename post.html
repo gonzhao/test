@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="styles.css">
+  
+  <!-- Bootstrap CSS (Dark Mode Theme) 
+  <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/darkly/bootstrap.min.css" rel="stylesheet">
+  -->
+  
+  <title>Blog Post</title>
+</head>
+
+<body>
+  <header>
+    <h2>Post</h2>
+    <button onclick="window.location.href = 'index.html';">Home</button>
+    <button onclick="window.history.back()">Back</button>
+    <button id="edit-button" style="display: none;">Edit</button>
+    <button id="download-button">Download</button> 
+  </header>
+  <main>
+    <section id="post-content">
+      <!-- Full post content will be dynamically inserted here -->
+    </section>
+  </main>
+  <script type="module" src="singlePost.js"></script>
+</body>
+</html>

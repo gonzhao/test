@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="styles.css">
+  
+  <!-- Bootstrap CSS (Dark Mode Theme) 
+  <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/darkly/bootstrap.min.css" rel="stylesheet">
+  -->
+  
+  <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+  <title>Edit Post</title>
+</head>
+
+<body>
+  <header>
+    <h2>Edit Post</h2>
+    <button onclick="window.location.href = 'index.html';">Home</button>
+    <button onclick="window.history.back()">Back</button>
+  </header>
+  <main>
+    
+    <label for="post-title">Title:</label>
+    <input type="text" id="post-title" name="title" placeholder="Enter post title">
+    
+    <section id="editor-container">
+    <!-- Quill editor will be inserted here -->
+    </section>
+
+     <!-- Collections Dropdown -->
+    <div class="dropdown" id="collections-dropdown">
+      <span>Select Collection</span>
+      <div class="dropdown-content">
+        <p class="collection-item" data-value="Images">Images</p>
+        <p class="collection-item" data-value="Ideas">Ideas</p>
+        <p class="collection-item" data-value="Data">Data</p>
+        <p class="collection-item" data-value="Inspiration">Inspiration</p>
+        <p class="collection-item" data-value="Creatures">Creatures</p>
+        <p class="collection-item" data-value="Enemy">Enemy</p>
+      </div>
+    </div>
+
+    <!-- Save button -->
+    <button id="save-button">Save</button> 
+  </main>
+  <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+  <script type="module" src="editPost.js"></script>
+</body>
+</html>

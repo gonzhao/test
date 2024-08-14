@@ -1,0 +1,359 @@
+/* General styles */
+body {
+  font-family: Arial, sans-serif;
+}
+
+header {
+  background-color: #007bff;
+  color: white;
+  text-align: center;
+  padding: 1rem 0;
+}
+
+main {
+  padding: 20px;
+}
+
+#new-post {
+  max-width: 600px;
+  margin: auto;
+}
+
+form {
+  width: 100%;
+}
+
+form label {
+  display: block;
+  margin-top: 10px;
+}
+
+form input[type="text"],
+form textarea {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+button[type="submit"] {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+/* Content box */
+.content-box {
+  width: 140%;
+  height: 300px; /* Initial height */
+  overflow-y: hidden;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical; /* Prevent manual resizing */
+  transition: height 0.3s ease;
+  cursor: pointer;
+}
+
+/* Grid layout for cards */
+#blog-posts {
+  display: flex;
+  flex-wrap: wrap; /* Wrap items onto multiple lines */
+  gap: 2px; /* Adjust spacing between items */
+}
+
+/* Card styles */
+
+.card__article {
+  flex: 0 0 calc(15% - 10px); /* Adjust this value as needed */
+  height: 220px; /* Fixed height */
+  box-sizing: border-box;
+  overflow: hidden; /* Hide overflow content */
+  position: relative; /* For inner content positioning */
+  border-radius: 12px; 
+  transition: transform 0.15s ease-in-out;
+  padding: 5px;
+  background-color: #fff;
+}
+
+.card__article:hover {
+  cursor: pointer;
+  transform: translateY(-15px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card__title {
+  font-weight: bold;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.card__description {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.card__data {
+  display: flex;
+  flex-direction: column;
+}
+
+.card__delete {
+  color: #dc3545;
+  cursor: pointer;
+}
+
+/*
+.card__image {
+  width: 30%;
+  height: 30%;
+  border-radius: 8px; 
+  margin-bottom: 10px; 
+}*/
+
+.images-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-bottom: 10px; /* Space between the images and the next element */
+}
+
+.mini-image {
+  width: 25px;
+  height: 25px;
+  object-fit: cover;
+}
+
+.options-layer {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: rgba(218, 216, 216, 0.8);
+  padding: 5px;
+  border-radius: 4px;
+  z-index: 10;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.card__article:hover .options-layer {
+  opacity: 1;
+}
+
+/*ICONS*/
+/* Ensure the icon is large enough to be visible */
+.delete-button, .edit-button, .add-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  margin-bottom: 5px;
+}
+
+.delete-button i, .edit-button i , .add-button i{
+  font-size: 1.5em; 
+}
+
+/*Icon Colors */
+.delete-button i {
+  color: rgb(248, 112, 112);
+}
+
+.edit-button i {
+  color: rgb(77, 77, 252);
+}
+
+.add-button i {
+  color: rgb(218, 143, 93);
+}
+
+/* Responsive adjustments */
+@media (min-width: 576px) {
+  .card__article {
+    width: calc(50% - 20px); /* Two cards per row with margins */
+    margin-right: 20px;
+  }
+}
+
+@media (min-width: 768px) {
+  .card__article {
+    width: calc(33.33% - 20px); /* Three cards per row with margins */
+    margin-right: 20px;
+  }
+}
+
+@media (min-width: 992px) {
+  .card__article {
+    width: calc(25% - 20px); /* Four cards per row with margins */
+    margin-right: 20px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .card__article {
+    width: calc(20% - 20px); /* Five cards per row with margins */
+    margin-right: 20px;
+  }
+}
+
+/* Dropdown Input Style */
+.dropdown {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 12px 16px;
+  z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown-content p {
+  margin: 0;
+}
+
+/*Overlay Single Post*/
+/* Gallery styles */
+.gallery-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Adjust as needed */
+  gap: 10px;
+}
+
+.post-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+.post-image:hover {
+  transform: scale(1.1);
+}
+
+/* Overlay for expanded image */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Ensure it overlays everything */
+}
+
+.expanded-image {
+  max-width: 90%;
+  max-height: 80%; /* Adjusted for space for controls */
+  object-fit: contain; /* Maintain aspect ratio */
+  cursor: pointer; /* Show pointer cursor on hover */
+  transition: transform 0.3s ease-in-out; /* Smooth transition for scaling */
+}
+
+/*Zoom Controls*/
+.zoom-controls {
+  position: absolute;
+  top: 10px;
+  display: flex;
+  justify-content: center;
+  width: 100%; /* Full width to center the buttons */
+  z-index: 1001; /* Ensure it is above the image */
+}
+
+.zoom-button {
+  background-color: #519ef0;
+  color: white;
+  border: none;
+  padding: 8px;
+  margin-left: 5px;
+  font-size: 1.2em;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.zoom-button:hover {
+  background-color: #0056b3;
+}
+
+/*Collection */
+.collection-square {
+  height: 150px; /* Adjust height as needed */
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.collection-square:hover {
+  cursor: pointer;
+  background-color: #e0e0e0;
+}
+
+.collection-square:empty:before {
+  content: "+";
+  font-size: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ccc;
+}
+
+/*Collectios folder Name*/
+.collection-name {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 20px; /* Adjust the font size as needed */
+  color: rgb(19, 17, 17);
+}
+
+/*Collection Overlay*/
+.collection-overlay {
+  display: none;
+  position: absolute;
+  background-color: rgba(218, 216, 216, 0.8);
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 5px;
+  border-radius: 4px;
+  z-index: 1000;
+}
+
+.collection-overlay .collection-item {
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.collection-overlay .collection-item:hover {
+  background-color: #f0f0f0;
+}
+
+
+
+
