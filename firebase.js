@@ -5,12 +5,12 @@ import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyCiTdnkKEktDLmRfoPaUIhB89K2dplaUWs",
-  authDomain: "blog-website-2fb27.firebaseapp.com",
-  projectId: "blog-website-2fb27",
-  storageBucket: "blog-website-2fb27.appspot.com",
-  messagingSenderId: "1011737736353",
-  appId: "1:1011737736353:web:4a17a396db36a2a7936ce0"
+  apiKey: "",
+  authDomain: "",
+  projectId: "",
+  storageBucket: "",
+  messagingSenderId: "",
+  appId: ""
 };
 
 // Init Firebase
